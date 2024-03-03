@@ -3,15 +3,15 @@ import React from "react";
 import "./NewGoal.css"; 
 
 
-const NewGoal = () =>{
+const NewGoal = props =>{
     const addGoalHandler = event =>{
         event.preventDefault();
 
         const newGoal ={
             id: Math.random().toString(), text :'Ny new Goal'
         };
-        
-        console.log(newGoal);
+
+        props.onAddGoal(newGoal);
     };
 
     return <form className="new-goal" onSubmit={addGoalHandler}>
